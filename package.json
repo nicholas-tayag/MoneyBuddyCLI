@@ -1,7 +1,7 @@
 {
   "name": "moneybuddycli",
   "version": "1.0.0",
-  "description": "We will be creating a text-based \"choose your own adventure\" game that runs entirely in the terminal using JavaScript and different NPM packages.",
+  "description": "Financial Hub",
   "main": "app.js",
   "type": "module",
   "scripts": {

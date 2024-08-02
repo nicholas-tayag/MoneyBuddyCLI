@@ -1,17 +1,21 @@
 import SpotifyWebApi from 'spotify-web-api-node';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const spotifyApi = new SpotifyWebApi({
-  clientId:  'f1c2948a00fd4541922b6333322c0494', //ENTER ID HERE
-  clientSecret: '003827bffd9b4755b8f97c0d0dd2a788', //ENTER SECRETID HERE
+  apiID: process.env.SPOTIFY_API_ID,
+  apiSECRET: process.env.SPOTIY_API_SECRET,
 });
 
 export const fetchArtistsData = () => {
     return spotifyApi.clientCredentialsGrant()
       .then(data => {
         spotifyApi.setAccessToken(data.body['access_token']);
-        return spotifyApi.searchArtists('a', { limit: 50 });
+        return spotifyApi.searchArtists('a', { limit: 50 }); // return artists
       })
       .then(data => {
+        // initilize map of artists 
         return data.body.artists.items.map(artist => ({
           id: artist.id,
           name: artist.name,

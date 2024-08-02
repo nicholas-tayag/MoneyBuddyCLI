@@ -9,14 +9,15 @@ import { timedMode } from './timedMode.js';
 const resolveAnimations = (ms = 2000) => new Promise(resolve => setTimeout(resolve, ms));
 
 async function startHigherLower() {
-  const welcomeMsg = chalkAnimation.rainbow('Welcome to the Higher Lower Game Spotify Version! \n');
+  console.clear()
+  const welcomeMsg = chalkAnimation.rainbow('Loading Higher Lower... \n');
   await resolveAnimations();
   welcomeMsg.stop();
 
-  await mainMenu();
+  await HLmainMenu();
 }
 
-async function mainMenu() {
+async function HLmainMenu() {
   console.clear();
   console.log(chalk.greenBright(figlet.textSync('Higher/Lower Spotify Version')));
 
@@ -25,16 +26,16 @@ async function mainMenu() {
       name: 'Classic Mode - Guess which artist has more followers.',
       value: 'classic'
     },
+    // {
+    //   name: 'Timed Mode - Play Against the Clock!',
+    //   value: 'timed'
+    // },
+    // {
+    //   name: 'Leaderboard - View the top scores.',
+    //   value: 'leaderboard'
+    // },
     {
-      name: 'Timed Mode - Play Against the Clock!',
-      value: 'timed'
-    },
-    {
-      name: 'Leaderboard - View the top scores.',
-      value: 'leaderboard'
-    },
-    {
-      name: 'Exit',
+      name: 'Return to MoneyBuddyCLI',
       value: 'exit'
     }
   ];
@@ -50,17 +51,18 @@ async function mainMenu() {
     case 'classic':
       await classicMode();
       break;
-    case 'timed':
-      await timedMode();
-      break;
-    case 'leaderboard':
-      await showLeaderboard();
-      break;
+    // case 'timed':
+    //   await timedMode();
+    //   break;
+    // case 'leaderboard':
+    //   await showLeaderboard();
+    //   break;
     case 'exit':
-      console.log('Goodbye!');
-      process.exit(0);
+      console.log('Returning to MoneyBuddyCLI...');
+      return;
   }
 }
 
 
 export { startHigherLower };
+export { HLmainMenu };
