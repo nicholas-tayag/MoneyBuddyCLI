@@ -1,0 +1,28 @@
+{
+  "name": "moneybuddycli",
+  "version": "1.0.0",
+  "description": "We will be creating a text-based \"choose your own adventure\" game that runs entirely in the terminal using JavaScript and different NPM packages.",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@huggingface/inference": "^2.8.0",
+    "axios": "^1.7.3",
+    "chalk": "^5.3.0",
+    "chalk-animation": "^2.0.3",
+    "dotenv": "^16.4.5",
+    "figlet": "^1.7.0",
+    "huggingface": "^1.4.0",
+    "inquirer": "^10.1.6",
+    "nanospinner": "^1.1.0",
+    "openai": "^4.53.2",
+    "sharp": "^0.33.4",
+    "spotify-web-api-node": "^5.0.2",
+    "terminal-image": "^3.0.0"
+  }
+}
