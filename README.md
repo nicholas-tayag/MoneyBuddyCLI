@@ -11,7 +11,7 @@ MoneyBuddyCLI is a command-line interface (CLI) financial hub built with JavaScr
   Calculate potential investment growth based on different investment types and interest rates.
 
 - **Financial News Updates:**  
-  Get the latest updates on financial markets and trends.
+  Get the latest updates on financial markets and trends using NewsAPI.
 
 - **Educational Resources:**  
   Access curated resources to learn more about personal finance.
